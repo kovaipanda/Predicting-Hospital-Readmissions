@@ -23,19 +23,33 @@ Description:
 This script loads the synthetic hospital readmissions dataset and calculates the total number of missing cells as well as missing values per column. The results are printed to the console.
 
 Column Name and Number of Missing Values:
+
 Patient_ID                  0
+
 Age                         0
+
 Gender                      0
+
 Admission_Type              0
+
 Diagnosis                   0
+
 Num_Lab_Procedures          0
+
 Num_Medications             0
+
 Num_Outpatient_Visits       0
+
 Num_Inpatient_Visits        0
+
 Num_Emergency_Visits        0
+
 Num_Diagnoses               0
+
 A1C_Result               4034
+
 Readmitted                  0
+
 dtype: int64
 
 hospital2.py:
@@ -48,10 +62,15 @@ This script evaluates the relationships between categorical features and the tar
 It uses chi-square tests to determine the strength of these relationships and stores the results in a CSV file.
 
 Chi-square Test Results:
+
           Feature  Chi2 Statistic   P-Value  Degrees of Freedom
+          
 0          Gender        0.737870  0.691470                   2
+
 1  Admission_Type        2.140936  0.342848                   2
+
 2       Diagnosis        3.425236  0.330589                   3
+
 3      A1C_Result        2.173099  0.140443                   1
 
 hospital3.py:
@@ -64,10 +83,15 @@ This script encodes categorical variables in the dataset into numerical values u
 It also saves the encoded dataset and prints the mappings of categorical columns to their respective encodings.
 
 Mappings of Categorical Columns:
+
 Gender: {'Female': 0, 'Male': 1, 'Other': 2}
+
 Admission_Type: {'Elective': 0, 'Emergency': 1, 'Urgent': 2}
+
 Diagnosis: {'Diabetes': 0, 'Heart Disease': 1, 'Infection': 2, 'Injury': 3}
+
 A1C_Result: {'Abnormal': 0, 'Normal': 1, nan: 2}
+
 Readmitted: {'No': 0, 'Yes': 1}
 
 hospital4.py:
@@ -88,6 +112,7 @@ Description:
 This script handles the class imbalance problem in the dataset using Synthetic Minority Over-sampling Technique (SMOTE) to balance the Readmitted classes.
 
 Class distribution before balancing: Counter({0.0: 5054, 1.0: 4946})
+
 Class distribution after balancing: Counter({0.0: 5054, 1.0: 5054})
 
 hospital6.py:
@@ -100,18 +125,31 @@ This script trains a Random Forest classifier on the balanced dataset.
 It evaluates model performance with a classification report and also plots the feature importance.
 
 Feature Importances:
+
                   Feature  Importance
+                  
 0              Patient_ID    0.166758
+
 5      Num_Lab_Procedures    0.147415
+
 1                     Age    0.139030
+
 6         Num_Medications    0.121584
+
 10          Num_Diagnoses    0.082594
+
 7   Num_Outpatient_Visits    0.058067
+
 9    Num_Emergency_Visits    0.057750
+
 8    Num_Inpatient_Visits    0.057183
+
 4               Diagnosis    0.050865
+
 3          Admission_Type    0.040200
+
 2                  Gender    0.039707
+
 11             A1C_Result    0.038846
 
 hospita7.py:
@@ -186,19 +224,33 @@ Display confusion matrices for both the base model and the fine-tuned model.
 Conduct additional fine-tuning by focusing on reg_alpha and reg_lambda.
 
 Test Set:
+
 Accuracy: 0.8534
+
 Precision: 0.8549
+
 Recall: 0.8445
+
 F1 Score: 0.8510
+
 ROC-AUC: 0.8410
+
 Training Set:
+
 Accuracy: 0.8591
+
 Precision: 0.8642
+
 Recall: 0.8563
+
 F1 Score: 0.8579
+
 ROC-AUC: 0.9236
+
 Confusion Matrix:
+
 [[1277  238]
+
  [ 262 1253]]
 
 xgbv.py:
@@ -214,21 +266,33 @@ Load the model from the saved pickle file and make predictions on the test set.
 Evaluate model performance using the same metrics (accuracy, precision, recall, F1 score, ROC-AUC).
 
 --- Test Set Performance ---
+
 Accuracy: 0.8558
+
 Precision: 0.8542
+
 Recall: 0.8583
+
 F1 Score: 0.8562
+
 ROC-AUC: 0.8626
 
 --- Training Set Performance ---
+
 Accuracy: 0.8495
+
 Precision: 0.8549
+
 Recall: 0.8418
+
 F1 Score: 0.8483
+
 ROC-AUC: 0.9151
 
 Confusion Matrix:
+
 [[1077  185]
+
  [ 179 1084]]
 
 ![1](https://github.com/user-attachments/assets/21f1d006-29e4-47be-a7bf-6ed89383c47d)
@@ -277,10 +341,15 @@ Each script is modular and can be adjusted according to the needs of the analysi
 Results
 
 The model demonstrates strong performance across both the test and training sets. 
+
 For the test set, the accuracy is 85.58%, with a precision of 85.42%, recall of 85.83%, and an F1 score of 85.62%, indicating a balanced capability in identifying true positives while minimizing false positives and negatives. 
+
 The ROC-AUC score of 0.8626 suggests that the model performs well at distinguishing between classes. 
+
 On the training set, the model achieves an accuracy of 84.95%, a precision of 85.49%, recall of 84.18%, and an F1 score of 84.83%. 
+
 The ROC-AUC for the training set is notably higher at 0.9151, showing slightly better separation of classes during training. 
+
 The confusion matrix reveals that out of 2,525 predictions, 1,077 true positives and 1,084 true negatives were correctly classified, with 179 false negatives and 185 false positives.
 
 Power Bi
