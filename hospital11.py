@@ -24,10 +24,3 @@ plt.tight_layout()
 plt.show()
 
 
-
-# Correlation Heatmap for Numerical Columns
-plt.figure(figsize=(10, 8))
-corr = df[numerical_cols + [target_col]].corr()
-sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
-plt.title("Correlation Heatmap Between Numerical Features and Target")
-plt.show()
