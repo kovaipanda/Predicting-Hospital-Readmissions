@@ -196,11 +196,9 @@ Task:
 Exploratory Data Analysis (EDA).
 
 Description: 
-This script performs data exploration, including boxplots for numerical features against the target and a correlation heatmap to visualize the relationships between features.
+This script performs data exploration, including boxplots for numerical features against the target.
 
 ![image](https://github.com/user-attachments/assets/baba573e-583a-4998-bd80-98dfd4afb5f6)
-
-![image](https://github.com/user-attachments/assets/876d3094-12a7-4bcb-8b1f-5734da468254)
 
 hospital12.py:
 
